@@ -1,7 +1,7 @@
 // Contracts config for cETH wrapper on Sepolia
 // Replace CONTRACT_ADDRESS and ABI with the generated ABI from deployments/sepolia/CETHWrapper.json
 
-export const CONTRACT_ADDRESS = '0x0000000000000000000000000000000000000000';
+export const CONTRACT_ADDRESS = '0x10ff3009EA6C5C10f83B77b9759dEdCCa11e8a27';
 
 export const CONTRACT_ABI = [
   {
