@@ -14,7 +14,11 @@ dotenv.config();
 import "./tasks/wrapper";
 
 // Use PRIVATE_KEY (hex without 0x prefix) and INFURA_API_KEY from .env
-const PRIVATE_KEY = process.env.PRIVATE_KEY ? `0x${process.env.PRIVATE_KEY}` : undefined;
+const PRIVATE_KEY = process.env.PRIVATE_KEY
+  ? process.env.PRIVATE_KEY.startsWith("0x")
+    ? process.env.PRIVATE_KEY
+    : `0x${process.env.PRIVATE_KEY}`
+  : undefined;
 const INFURA_API_KEY = process.env.INFURA_API_KEY || "";
 
 const config: HardhatUserConfig = {
