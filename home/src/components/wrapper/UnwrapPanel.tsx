@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Contract, ethers } from 'ethers';
+import { Contract } from 'ethers';
 import { useAccount } from 'wagmi';
 import { useEthersSigner } from '../../hooks/useEthersSigner';
 import { useZamaInstance } from '../../hooks/useZamaInstance';

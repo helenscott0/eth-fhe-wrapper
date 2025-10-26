@@ -15,6 +15,8 @@ export function BalancePanel() {
     args: [address ?? '0x0000000000000000000000000000000000000000']
   });
 
+  const isDecryptDisabled = isLoading || encBalance === undefined || encBalance === null;
+
   const decrypt = async () => {
     try {
       if (!instance || !address || !encBalance) throw new Error('Not ready');
@@ -58,7 +60,7 @@ export function BalancePanel() {
         <label>Encrypted</label>
         <div className="mono">{(encBalance as string) || '-'}</div>
       </div>
-      <button disabled={isLoading || !encBalance} onClick={decrypt}>Decrypt</button>
+      <button disabled={isDecryptDisabled} onClick={decrypt}>Decrypt</button>
       {decrypted && (
         <div className="field">
           <label>Decrypted (units)</label>
@@ -68,4 +70,3 @@ export function BalancePanel() {
     </div>
   );
 }
-
